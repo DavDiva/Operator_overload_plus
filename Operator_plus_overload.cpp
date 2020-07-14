@@ -24,6 +24,14 @@ public:
         return temp;
 
     }
+   bool operator==(const Point& other)
+    {
+       return this->x == other.x && this->y == other.y;
+    }
+   bool operator!=(const Point& other)
+   {
+       return !(this->x == other.x && this->y == other.y);
+   }
     void ShowObj()
     {
         cout <<"x= "<< x << endl;
@@ -33,8 +41,8 @@ public:
 
 int main()
 {
-    Point a(5, 6);
-    Point b(8, 12);
+    Point a(1, 6);
+    Point b(5, 6);
     Point c=a + b;
     cout << "Object a: " << endl;
     a.ShowObj();
@@ -42,6 +50,24 @@ int main()
     b.ShowObj();
     cout << "Object c: " << endl;
     c.ShowObj();
+    bool result = a == b;
+    if (result)
+    {
+        cout << "A==B" << endl;
+    }
+    else
+    {
+        cout << "A!=B" << endl;
+    }
+    bool result2 = b != c;
+    if (result2)
+    {
+        cout << "B!=C" << endl;
+    }
+    else
+    {
+        cout << "B==C" << endl;
+    }
 
     return 0;
 }
